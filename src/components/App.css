@@ -1,0 +1,65 @@
+:root {
+    font-size: 62.5%;
+    --mainBlue: #00c2fd;
+    --darkBlue: rgb(8, 31, 243);
+    --mainPink: rgb(241, 128, 223);
+    --white: #fff;
+    --black: #000;
+    --grey: #333;
+}
+
+.body{
+    font-family: "Nunito", sans-serif;
+    background-color: var(--white);
+    font-weight: 400;
+}
+
+.navbar {
+    font-size: 1.6rem;
+}
+
+#logo {
+    width: 20%;
+}
+
+.navbar-brand {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.cart {
+    transform: translateY(3px);
+    box-shadow: 0rem 1rem 2rem rgba(var(--black), .2);
+}
+
+.carousel {
+    width: 100%;
+    height: 70%;
+}
+
+.slide {
+    border-radius: 3px;
+}
+
+.cardGroud {
+    margin: 3rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 30rem;
+    transition: all .3s;
+}
+
+.hotIssue:hover {
+    transform: scale(1.1);
+}
+
+.card-img-top {
+    border-radius: 3px;
+}
+
+.cardBox {
+    display: inline-block;
+}
