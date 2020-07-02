@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-// import Earings from './Earing';
 import Earing from './Earing';
+import { ProductConsumer } from '../context';
+
+import './App.css';
 
 class EaringList extends Component {
-    // state = { earings: storeEarings }
-
-    addToCart = () => {
-
-    }
-
     render() {
         return (
             <React.Fragment>
                 <div className="py-5">
                     <div className="container">
-                        {/* <div className="row"> */}
-                            <Earing />
-                        {/* </div> */}
+                        <div className="row">
+                            <ProductConsumer>
+                            {value => {
+                               return value.earings.map(earing => {
+                                   return <Earing key={earing.id} earing={earing} />
+                               });
+                            }}
+                            {/* <Earing /> */}
+                            </ProductConsumer>
+                        </div>
                     </div>
                 </div>
             </React.Fragment>

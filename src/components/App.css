@@ -50,16 +50,104 @@
 .card {
     width: 30rem;
     transition: all .3s;
+    display: inline-block;
 }
 
+.card-text {
+    font-size: 2rem;
+    text-align: center;
+}
 .hotIssue:hover {
     transform: scale(1.1);
 }
 
 .card-img-top {
     border-radius: 3px;
+    transition: all .3s linear;
+}
+
+.card-footer {
+    background-color: transparent;
+    border-top: transparent;
+    transition: all .5s linear;
+}
+
+.card:hover {
+    box-shadow: .2rem .2rem .5rem 0 raba(var(--black), .2);
 }
 
 .cardBox {
-    display: inline-block;
+    transition: all .4s;
+}
+
+.cardBox:hover {
+    /* border: .1rem solid rgba(var(--grey), .2); */
+    transform: translateY(-2px);
+}
+
+.img-container{
+    position: relative;
+    overflow: hidden;
+}
+
+.img-container:hover .card-img-top {
+    transform: scale(1.2);
+}
+
+.cart-btn {
+    border: none;
+    font-size: 1.6rem;
+    opacity: 0;
+}
+
+.cardBox:hover .cart-btn {
+    opacity: 1;
+}
+
+.cart-btn:hover {
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(var(--black), .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inCart {
+    margin: 0 auto;
+}
+
+#price {
+    font-size: 1.6rem;
+}
+
+#modal {
+    background-color: var(--white);
+}
+
+.btn-black {
+    background-color: transparent;
+    text-transform: capitalize;
+    font-size: 1rem !important;
+    color: var(--grey);
+    border-radius: 0 !important;
+    border: .15rem solid var(--grey) !important;
+}
+
+.btn-black:hover {
+    background-color: var(--mainPink);
+    color: var(--white);
+}
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--mainBlue);
 }
