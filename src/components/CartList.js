@@ -1,6 +1,5 @@
 import React from 'react';
 import CartItem from './CartItem';
-import Cart from './Cart';
 
 const CartList = ({value}) => {
     const {cart} = value;

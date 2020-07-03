@@ -6,18 +6,18 @@ import './App.css';
 
 const data = [
     {
-     image: require('../img/slide1-2x.png'),
-     caption:"Hot issue",
+     image: require('../img/slide1-2x.jpg'),
+     caption:"Hot Issue",
      description:"Earing"
     },
     {
-      image: require('../img/slide2-2x.png'),
-      caption:"Hot issue",
+      image: require('../img/slide2-2x.jpg'),
+      caption:"Hot Issue",
       description:"Necklace"
      },
      {
-      image:require('../img/slide3-2x.png'),
-      caption:"Hot issue",
+      image:require('../img/slide3-2x.jpg'),
+      caption:"Hot Issue",
       description:"Jewelry"
      } 
   ]

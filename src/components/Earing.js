@@ -50,6 +50,7 @@ Earing.propTypes = {
         id:PropTypes.number,
         title:PropTypes.string,
         img:PropTypes.string,
+        img1x:PropTypes.string,
         price:PropTypes.number,
         description: PropTypes.string,
         inCart: PropTypes.bool

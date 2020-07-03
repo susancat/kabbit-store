@@ -43,10 +43,13 @@ class ProductProvider extends Component {
         earing.count = 1;
         const price = earing.price;
         earing.total = price;
-        this.setState(() => {
+        this.setState(
+            () => {
             return { earings: tempEarings, cart: [...this.state.cart, earing] };
-        },() => {console.log(this.state);
-        }
+            },
+            () => {
+                this.addTotals();
+            }
         );
     };
 
@@ -72,20 +75,96 @@ class ProductProvider extends Component {
     }
 
     increment = id => {
-        console.log("this is increment method");
+        let tempCart = [...this.state.cart];
+
+        const selectedEaring = tempCart.find(item => item.id === id);
+        const index = tempCart.indexOf(selectedEaring);
+        const earing = tempCart[index];
+
+        earing.count = earing.count + 1;
+        earing.total = earing.count * earing.price;
+
+        this.setState(() => {
+            return {
+                cart: [...tempCart],
+            }
+        }, () => {
+            this.addTotals();
+        });
     }
 
     decrement = id => {
-        console.log("this is decrement method");
-    }
+        let tempCart = [...this.state.cart];
+
+        const selectedEaring = tempCart.find(item => item.id === id);
+        const index = tempCart.indexOf(selectedEaring);
+        const earing = tempCart[index];
+
+        earing.count = earing.count - 1;
+
+        if(earing.count === 0) {
+            this.removeItem(id);
+        } else {
+            earing.total = earing.count * earing.price;
+            this.setState(() => {
+                return {
+                    cart: [...tempCart],
+                }
+            }, () => {
+                this.addTotals();
+            });
+        };
+    };
 
     removeItem = id => {
-        console.log("item removed");
-    }
+        let tempEarings = [...this.state.earings];
+        let tempCart = [...this.state.cart];
+
+        tempCart = tempCart.filter(item => item.id !== id);
+
+        const index = tempEarings.indexOf(this.getEaring(id));
+
+        let removedEaring = tempEarings[index];
+        removedEaring.inCart = false;
+        removedEaring.count = 0;
+        removedEaring.total = 0;
+
+        this.setState(
+            () => {
+                return {
+                    cart: [...tempCart],
+                    earings: [...tempEarings]
+                };
+            },
+            () => {
+                this.addTotals();
+            }
+        );
+    };
 
     clearCart = () => {
-        console.log("cart was cleared")
-    }
+        this.setState(() => {
+            return {cart: []};
+        },() => {
+            this.setEarings();
+            this.addTotals();
+        });
+    };
+
+    addTotals = () => {
+        let subTotal = 0;
+        this.state.cart.map(item => (subTotal += item.total));
+        const tempTax = subTotal * 0.1;
+        const tax = parseFloat(tempTax. toFixed(2));
+        const total = subTotal + tax;
+        this.setState(() => {
+            return {
+                cartSubTotal: subTotal,
+                cartTax: tax,
+                cartTotal: total
+            };
+        });
+    };
 
     render() {
         return (
