@@ -7,7 +7,7 @@ import './App.css';
 const CardGroup = () => {
     return(
         <div className="row cardGroud">
-            <div className="card hotIssue">
+            <div className="card hotIssue mx-auto">
                 <Link to='/earings'>
                     <img src= {require('../img/earing2-2x.jpg')} className="card-img-top" alt="earing" />
                 </Link>
@@ -15,7 +15,7 @@ const CardGroup = () => {
                 <p className="card-text">WISH EARING</p>
             </div>
             </div>
-            <div className="card hotIssue">
+            <div className="card hotIssue mx-auto">
             <Link to='/necklaces'>
                 <img src= {require('../img/neck1-2x.jpg')} className="card-img-top" alt="necklace" />
             </Link>
@@ -23,7 +23,7 @@ const CardGroup = () => {
                     <p className="card-text">BRACELET</p>
                 </div>
             </div>
-            <div className="card hotIssue">
+            <div className="card hotIssue mx-auto">
             <Link to='/necklaces'>
                 <img src= {require('../img/jewelry1-2x.jpg')} className="card-img-top" alt="jewelry" />
             </Link>

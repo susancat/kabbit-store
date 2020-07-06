@@ -119,12 +119,9 @@
     font-family: 'Courgette', cursive;
 }
 
-.jum2 {
-    margin-left: 35%;
-}
-
 .coBranding {
-    background-image: url(../img/co-branding.jpg);
+    background-image: url(../img/co-branding1.jpg);
+    color: var(--mainPink);
 }
 
 .modal {
